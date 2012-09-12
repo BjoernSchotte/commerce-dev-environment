@@ -1,6 +1,18 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require "yaml"
+
+_config = YAML.load(File.open(File.join(File.dirname(__FILE__), "../../vagrantconfig.yaml"), File::RDONLY).read)
+
+begin
+    _config.merge!(YAML.load(File.open(File.join(File.dirname(__FILE__), "../../vagrantconfig_local.yaml"), File::RDONLY).read))
+rescue Errno::ENOENT
+
+end
+
+CONF = _config
+
 Vagrant::Config.run do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise32"
@@ -9,7 +21,7 @@ Vagrant::Config.run do |config|
   # doesn't already exist on the user's system.
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
-  config.vm.host_name = "oxbox"
+  config.vm.host_name = "commercedev"
 
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
@@ -42,5 +54,12 @@ Vagrant::Config.run do |config|
     puppet.manifests_path = "../../puppet"
     puppet.module_path = "../../puppet/modules"
     puppet.manifest_file  = "site.pp"
+    puppet.facter = [
+        ['db_username',  CONF['db_username']],
+        ['db_password',  CONF['db_password']],
+        ['repository',   CONF['repository']],
+        ['svn_username', CONF['svn_password']],
+        ['svn_password', CONF['svn_password']],
+    ]
   end
 end

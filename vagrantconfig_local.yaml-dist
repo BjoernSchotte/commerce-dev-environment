@@ -1,0 +1,5 @@
+# local configuration
+
+# password is used for root user as well
+db_password: secure
+db_username: commercedev@localhost
