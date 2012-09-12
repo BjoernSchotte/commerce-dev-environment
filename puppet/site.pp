@@ -6,9 +6,19 @@ class { 'oxidce':
   directory     => '/var/www/oxidce',
   repository    => 'svn',
   version       => 'trunk',
-  db_user       => 'oxidce',
-  db_password   => 'oxidce',
+  db_user       => $db_username,
+  db_password   => $db_password,
 }
+
+exec { "add_vagrant_to_wwwdata":
+  command => "sudo adduser vagrant www-data",
+}
+
+exec { "chown_docroot":
+  command => "sudo chown -R vagrant:www-data /var/www/oxidce/",
+  require  => Class['oxidce'],
+}
+
 
 oxidce::apache { 'apache.oxidce':
   port     => 80,
