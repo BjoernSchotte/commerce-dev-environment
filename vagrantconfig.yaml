@@ -3,7 +3,7 @@
 # Use vagrantconfig_local.yaml to override these settings instead.
 
 db_password: secure
-db_username: oxidce@localhost 
+db_username: commercedev@localhost 
 repository: svn
 svn_username: false
 svn_password: false
