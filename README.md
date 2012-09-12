@@ -30,6 +30,11 @@ Start your browser and open "http://apache.oxidce" or "http://apache.magece" aft
  * Subversion
  * Git
  * Composer
+ * [puppet-oxidce Module](https://github.com/Mayflower/puppet-oxidce)
+
+### Support for Enterprise Editions
+
+Currently this Development Environment doesn't support the Enterprise Editions of the shop software as those are only available when licensed. If you want a great dev environment for your Enterprise Edition, please feel free to contact us.
 
 ### Contributing
 
