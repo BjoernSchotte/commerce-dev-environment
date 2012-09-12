@@ -31,4 +31,10 @@ Start your browser and open "http://apache.oxidce" or "http://apache.magece" aft
  * Git
  * Composer
 
+### Contributing
+
 Let us know if you miss something. Feel free to open pull requests for further improving this package.
+
+### Acknowledgements
+
+A big thanks goes to the creators of the [Piwik Dev Environment](https://github.com/piwik/piwik-dev-environment) who inspired this package.
