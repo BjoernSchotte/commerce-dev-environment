@@ -15,7 +15,7 @@ exec { "add_vagrant_to_wwwdata":
 }
 
 exec { "chown_docroot":
-  command => "sudo chown -R vagrant:www-data /var/www/oxidce/",
+  command => "sudo chown -R www-data:www-data /var/www/oxidce/",
   require  => Class['oxidce'],
 }
 
