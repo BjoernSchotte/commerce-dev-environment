@@ -7,18 +7,21 @@ It will setup a virtual machine based on Oracle's VirtualBox including everythin
 
 ### Available Vagrant Boxes
  * Ubuntu Precise 32
- * Ubuntu Precise 64
+ * soon: Ubuntu Precise 64
 
 ### Installation
  1. Install [Vagrant](http://www.vagrantup.com) & [VirtualBox](https://www.virtualbox.org)
  2. Clone this repository and update submodules (`git submodule init && git submodule update`)
- 3. Execute the command `vagrant up` within a `vagrant/$box` folder
- 4. That's it. It'll take some time when executing this command the first time. It'll download the Vagrant base box once and install all required packages.
- 5. Don't forget to update your local hosts file. You have to add "apache.oxidce" as well as "apache.magece".
+ 3. configure vagrantfile through vagrantconfig.yaml
+ 4. Execute the command `vagrant up` within a `vagrant/$box` folder
+ 5. That's it. It'll take some time when executing this command the first time. It'll download the Vagrant base box once and install all required packages.
+ 6. Don't forget to update your local hosts file. You have to add "apache.oxidce" as well as "apache.magece" and "apache.shopware".
+
+The bootup process automatically creates a special mysql database (either "oxid", "magento" or "shopware") which you can refer to in the installation screen of the respective shop system.
 
 ### Usage
 
-Start your browser and open "http://apache.oxidce" or "http://apache.magece" after installation. You'll see the installation screen of the shop system.
+Start your browser and open "http://apache.oxidce" or "http://apache.magece" or "http://apache.shopware/installation" after installation. You'll see the installation screen of the shop system.
 
 ### Installed Packages
  * PHP
@@ -31,6 +34,8 @@ Start your browser and open "http://apache.oxidce" or "http://apache.magece" aft
  * Git
  * Composer
  * [puppet-oxidce Module](https://github.com/Mayflower/puppet-oxidce)
+ * [puppet-magentoce Module](https://github.com/Mayflower/puppet-magentoce)
+ * [puppet-shopware Module](https://github.com/Mayflower/puppet-shopware)
 
 ### Support for Enterprise Editions
 
