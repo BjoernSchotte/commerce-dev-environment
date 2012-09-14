@@ -38,8 +38,6 @@ Vagrant::Config.run do |config|
   # computers to access the VM, whereas host only networking does not.
   config.vm.forward_port 80, 8080
 
-  # config.vm.share_folder("oxidce","/oxidce","../..", :nfs => true)
-
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
@@ -53,7 +51,7 @@ Vagrant::Config.run do |config|
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "../../puppet"
     puppet.module_path = "../../puppet/modules"
-    puppet.manifest_file  = "site.pp"
+    puppet.manifest_file = "site_" + CONF['shop_platform'] + ".pp"
     puppet.facter = [
         ['db_username',  CONF['db_username']],
         ['db_password',  CONF['db_password']],
