@@ -7,3 +7,4 @@ db_username: commercedev@localhost
 repository: svn
 svn_username: false
 svn_password: false
+shop_platform: shopware
