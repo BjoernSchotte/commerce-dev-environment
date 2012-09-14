@@ -36,10 +36,10 @@
 	url = git://github.com/openstack-ci/puppet-vcsrepo
 [submodule "puppet/modules/oxidce"]
 	path = puppet/modules/oxidce
-	url = https://github.com/Mayflower/puppet-oxidce
+	url = git://github.com/Mayflower/puppet-oxidce
 [submodule "puppet/modules/shopware"]
 	path = puppet/modules/shopware
-	url = https://github.com/Mayflower/puppet-shopware
+	url = git://github.com/Mayflower/puppet-shopware
 [submodule "puppet/modules/magece"]
 	path = puppet/modules/magece
-	url = https://github.com/Mayflower/puppet-magentoce
+	url = git://github.com/Mayflower/puppet-magentoce
