@@ -33,7 +33,7 @@
 	url = git://github.com/puppetlabs/puppetlabs-stdlib
 [submodule "puppet/modules/vcsrepo"]
 	path = puppet/modules/vcsrepo
-	url = git://github.com/openstack-ci/puppet-vcsrepo
+	url = git://github.com/openstack-infra/puppet-vcsrepo.git
 [submodule "puppet/modules/oxidce"]
 	path = puppet/modules/oxidce
 	url = git://github.com/Mayflower/puppet-oxidce
