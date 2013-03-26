@@ -2,6 +2,10 @@ Exec {
   path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
 }
 
+Package {
+  require => Exec['apt-get_update'],
+}
+
 class { 'magece':
   directory     => '/var/www/magece',
   repository    => 'svn',
