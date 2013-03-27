@@ -2,6 +2,10 @@ Exec {
   path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
 }
 
+Package {
+  require => Exec['apt-get_update'],
+}
+
 class { 'shopware':
   directory     => '/var/www/shopware',
   repository    => 'git',
