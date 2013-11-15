@@ -10,6 +10,7 @@ It will setup a virtual machine based on Oracle's VirtualBox including everythin
  * soon: Ubuntu Precise 64
 
 ### Installation
+
  1. Install [Vagrant](http://www.vagrantup.com) & [VirtualBox](https://www.virtualbox.org)
  2. Clone this repository and update submodules (`git submodule init && git submodule update`)
  3. configure vagrantfile through vagrantconfig.yaml
